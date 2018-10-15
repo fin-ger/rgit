@@ -32,7 +32,7 @@ encapsulate() {
          )
 }
 
-find . -name .git -type d -prune | sed 's;/.git$;;' | while read -r repo
+find -L . -name .git -type d -prune | sed 's;/.git$;;' | while read -r repo
 do
     (
         echo -e "\\e[1mGit repository at ${repo}:\\e[0m"
